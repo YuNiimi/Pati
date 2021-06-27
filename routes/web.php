@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    echo "a";
     return view('index');
 });
 
 Route::get('/data','App\Http\Controllers\ScrapingController@index');
 
 Route::get('/master', function () {
+    echo "master";
     return view('master/index');
 });
 
