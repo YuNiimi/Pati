@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSlotsTable extends Migration
+class CreateSlotDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateSlotsTable extends Migration
      */
     public function up()
     {
-        Schema::create('slots', function (Blueprint $table) {
+        Schema::create('slot_details', function (Blueprint $table) {
             $table->id();
-            $table->string('store_id');
-            $table->string('sis');
             $table->string('name');
-            $table->string('name_encode');
-            $table->integer('slot_detail_id')->default(0);
+            $table->string('settei');
+            $table->string('gassan');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateSlotsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('slots');
+        Schema::dropIfExists('slot_details');
     }
 }

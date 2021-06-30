@@ -18,7 +18,9 @@ class MasterSlotController extends Controller
 
     public function edit($store_id){
         $slots = DB::table('slots')->where("store_id",$store_id)->get();
-        return view('master.slot.edit',['datas' => $slots,"store" => $store_id]);
+        $store_data = DB::table('stores')->where("id",$store_id)->first();
+        $name = $store_data->name;
+        return view('master.slot.edit',['datas' => $slots,"store" => $store_id,"name"=>$name]);
     }
 
     public function slotcreate(Request $request){
@@ -30,6 +32,32 @@ class MasterSlotController extends Controller
         
         $slot->save();
         return redirect('master/'.$request->input('store_id')."/slot");
+    }
+
+    public function slotedit(Request $requests){
+        // foreach($requests as $request){
+        //     var_dump($request);
+        // }
+        for($i=0;$i<count($requests["edit_names"]);$i++){
+            $id=$requests["store_id"];
+            $slots_id=$requests["edit_ids"][$i];
+            $sis=$requests["edit_siss"][$i];
+            $name=$requests["edit_names"][$i];
+            $name_encode=$requests["edit_name_encodes"][$i];
+            $slot_detail=0;
+
+            Slots::updateOrCreate(
+                ['id' => $slots_id],
+                ['sis'=>$sis, 'name'=>$name, 'name_encode'=>$name_encode,'slot_detail'=>$slot_detail]
+            );
+        }
+        return redirect('master/'.$requests->input('store_id')."/slot");
+    }
+
+    public function createcorner(Request $request){
+        // csvで受け取り
+        echo "csvで受け取る";
+
     }
 
 }
