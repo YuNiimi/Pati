@@ -29,7 +29,7 @@ class MasterSlotController extends Controller
         $slot->name_encode=$request->input('name_encode');
         
         $slot->save();
-        return redirect('master/store/'.$request->input('store_id'));
+        return redirect('master/'.$request->input('store_id')."/slot");
     }
 
 }

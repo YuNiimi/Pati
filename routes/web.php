@@ -14,14 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    echo "a";
     return view('index');
 });
 
 Route::get('/data','App\Http\Controllers\ScrapingController@index');
 
 Route::get('/master', function () {
-    echo "master";
     return view('master/index');
 });
 
@@ -32,3 +30,4 @@ Route::post('/master/store/slot/create','App\Http\Controllers\MasterSlotControll
 
 
 Route::get('/datas/index','App\Http\Controllers\DatasController@index');
+Route::get('/datas/download','App\Http\Controllers\DatasController@download');

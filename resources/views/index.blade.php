@@ -21,7 +21,9 @@
             <td><a style="width:100%; height:100%; display:block;" href="/datas/index">
                 データ閲覧
             </a></td>
-            <td>データダウンロード（csv）</td>
+            <td><a style="width:100%; height:100%; display:block;" href="/datas/download">
+            データダウンロード（csv）
+            </a></td>
         </tr>
     </table>
 </div>

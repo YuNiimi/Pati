@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
-        <title>Laravel</title>
+        <title>ダウンロードメニュー</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -21,29 +21,37 @@
         </style>
     </head>
     <body class="container">
-    <table class="table">
-        <thead>
-            <tr>
-                <td>データid</td>
-                <td>店舗id</td>
-                <td>スロットid</td>
-                <td>台番号</td>
-                <td>bb</td>
-                <td>rb</td>
-                <td>games</td>
-                <td>date</td>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($datas as $data)
-                <tr>
-                @foreach($data as $el)
-                    <td>{{$el}}</td>
-                @endforeach
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+    
+    <button>全件ダウンロード</button>
+    <button>絞り込みダウンロード</button>
+    
+    <form action="">
+    
+    @csrf
+        <input type="hidden" name="flag">
+        <div>
+            <label for="form-name" class="form-label">店舗</label>
+            <input class="form-control" type="text" name="code" id="form-name" >
+            <!-- @php
+    $job_name_loop = [
+        ''      => '選択してください' ,
+        '公務員' => '公務員' ,
+        '医師'   => '医師' ,
+        '弁護士' => '弁護士' ,
+    ];
+    @endphp
+    {{ Form::select('job_name', $job_name_loop, old('job_name'), ['class' => 'my_class']) }} -->
+        </div>   
+        <div>
+            <label for="form-start" class="form-label">start</label>
+            <input class="form-control" type="date" name="start" id="form-start" >
+        </div>
+        <div>
+            <label for="form-end" class="form-label">end</label>
+            <input class="form-control" type="date" name="end" id="form-end" >
+        </div>
+    </form>
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
