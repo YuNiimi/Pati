@@ -67,10 +67,13 @@ function analyse(){
     var chunks = new Array();
     //上から一列ずつに分割
     chunks = arrayChunk(data, cvs.width*4);
-    console.log(arrayChunk(data, cvs.width*4));
+    // console.log(arrayChunk(data, cvs.width*4));
 
     var max_depth = 0 
+    var one_block_height = cvs.height/4
+    console.log("one_block_height:"+one_block_height)
 
+    //start行数をもっとしたにずらすこと
     for(var i=0;i<chunks.length;i++){
         for(var j=0;j<cvs.width*4;j+=4){
             // i行j列目のピクセルデータを４つずつ見る
@@ -86,18 +89,11 @@ function analyse(){
     }
 
     ctx.putImageData(ImageData,0,0)
-    var one_block_height = cvs.height/4
-    console.log(max_depth)
-    console.log(one_block_height)
-    var answer = 30000*(max_depth%one_block_height/one_block_height )
-    console.log(answer)
-    // for(var i=0;i<data.length; i+=4){
-    //     data[i]     = 255 - data[i];     // red
-    //   data[i + 1] = 255 - data[i + 1]; // green
-    //   data[i + 2] = 255 - data[i + 2]; // blue
-    // }
-    // ctx.putImageData(ImageData, 0, 0);
 
+
+    console.log("max_depth:"+max_depth)
+    var answer = 30000*(max_depth%one_block_height/one_block_height )
+    console.log("answer:"+answer)
 }
 
 //テスト用
