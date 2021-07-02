@@ -38,3 +38,7 @@ Route::post('/master/store/slot/create','App\Http\Controllers\MasterSlotControll
 //　データ閲覧/csvダウンロード
 Route::get('/datas/index','App\Http\Controllers\DatasController@index');
 Route::get('/datas/download','App\Http\Controllers\DatasController@download');
+
+Route::get('/test', function () {
+    return view('test.test');
+});

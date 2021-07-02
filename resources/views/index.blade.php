@@ -5,7 +5,7 @@
  
 @section('content')
 <div class="container">
-    <table class="table w-80 mt-4 display-4">
+    <table class="table w-80 mt-4">
         <tr>
             <td><a style="width:100%; height:100%; display:block;" href="/data">
                 ・スクレイピング実行
@@ -24,6 +24,11 @@
         <tr>
             <td><a style="width:100%; height:100%; display:block;" href="/datas/download">
             ・データダウンロード（csv）
+            </a></td>
+        </tr>
+        <tr>
+            <td><a style="width:100%; height:100%; display:block;" href="/test">
+            画像テスト
             </a></td>
         </tr>
     </table>

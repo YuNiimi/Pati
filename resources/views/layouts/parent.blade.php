@@ -5,7 +5,7 @@
 <title>@yield('title')｜nodoame.net</title>
 <meta name="description" itemprop="description" content="@yield('description')">
 <meta name="keywords" itemprop="keywords" content="@yield('keywords')">
-<link href="/css/star/layout.css" rel="stylesheet">
+<!-- <link href="/css/star/layout.css" rel="stylesheet"> -->
 <!-- @yield('pageCss') -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
 
