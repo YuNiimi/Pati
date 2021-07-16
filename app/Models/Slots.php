@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Slots extends Model
 {
     use HasFactory;
-    public $fillable = ['store_id','sis','name','name_encode','slots_detail_id'];
+    public $fillable = ['store_id','sis','name','name_encode','slot_detail_id'];
 }
