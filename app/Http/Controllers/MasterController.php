@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\DB;
 
 class MasterController extends Controller
 {
+    // debug用処理（./debug）
+    public function debug(){
+        echo "slots全削除";
+        DB::table('slots')->delete();
+
+
+    }
+
+
     public function index(){
         // 店舗データを返す
         $stores = DB::table('stores')->get();

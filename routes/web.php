@@ -19,21 +19,21 @@ Route::get('/', function () {
 
 Route::get('/data','App\Http\Controllers\ScrapingController@index');
 
-// ☆☆☆☆　マスタメイン ☆☆☆☆
+// ☆☆☆☆　マスタ ☆☆☆☆
     // 店舗リスト追加、編集
     Route::get('/master','App\Http\Controllers\MasterController@index');
     Route::post('/master/store/edit','App\Http\Controllers\MasterController@storeedit');
     Route::post('/master/store/create','App\Http\Controllers\MasterController@storecreate');
 
     //　スロット個別データマスタ
+    Route::get('/master/store','App\Http\Controllers\MasterStoreController@index');
 
+    // 店舗ごとの機種マスタ
+    Route::get('/master/{store_id}/slot','App\Http\Controllers\MasterSlotController@edit');
+    Route::post('/master/store/slot/edit','App\Http\Controllers\MasterSlotController@slotedit');
+    Route::post('/master/store/slot/create','App\Http\Controllers\MasterSlotController@slotcreate');
 
-Route::get('/master/store','App\Http\Controllers\MasterStoreController@index');
-
-// 店舗ごとの機種マスタ
-Route::get('/master/{store_id}/slot','App\Http\Controllers\MasterSlotController@edit');
-Route::post('/master/store/slot/edit','App\Http\Controllers\MasterSlotController@slotedit');
-Route::post('/master/store/slot/create','App\Http\Controllers\MasterSlotController@slotcreate');
+Route::get('debug','App\Http\Controllers\MasterController@debug');
 
 //　データ閲覧/csvダウンロード
 Route::get('/datas/index','App\Http\Controllers\DatasController@index');
